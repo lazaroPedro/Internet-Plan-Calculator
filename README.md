@@ -49,8 +49,8 @@ O projeto é 100% containerizado com Docker, garantindo que ele rode de forma id
 
 1.  **Clone o Repositório:**
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
+    git clone https://github.com/lazaroPedro/Internet-Plan-Calculator
+    cd Internet-Plan-Calculator
     ```
 
 2.  **Configure as Variáveis de Ambiente:**
