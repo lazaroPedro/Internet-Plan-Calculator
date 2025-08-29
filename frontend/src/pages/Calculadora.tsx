@@ -33,7 +33,7 @@ const initialItems: ItemState[] = [
 const Calculadora: React.FC = () => {
 
   const [calculado, setCalculado] = useState(true)
-  const [plan, setPlan] = useState({ plano: "", velocidade: 0, preco: 100 })
+  const [plan, setPlan] = useState({ plano: "", velocidade: 0})
 
   const [toggle, setToggle] = useState(false)
   const [items, setItems] = useState<ItemState[]>(initialItems);
@@ -71,7 +71,7 @@ const Calculadora: React.FC = () => {
     }
     try {
       const response = await api.post("/api/plans", newClient);
-      setPlan({ plano: response.data.suggestedPlan, velocidade: response.data.velocity, preco: 100 });
+      setPlan({ plano: response.data.suggestedPlan, velocidade: response.data.velocity});
       setCalculado(!calculado);
       console.log(newClient)
     } catch (error) {
@@ -82,7 +82,7 @@ const Calculadora: React.FC = () => {
 
   return (<div onClick={() => { if (calculado == false) { setCalculado(true) } }}>
     {calculado ? "" : (<PlanoModal plano={plan.plano} velocidade={plan.velocidade}
-      preco={plan.preco}
+
       qtdCellphone={items.at(0)?.count as number} qtdComputer={items.at(1)?.count as number}
       qtdSmarttv={items.at(2)?.count as number}
       qtdTvbox={items.at(3)?.count as number} qtdOther={items.at(4)?.count as number} gamer={toggle}

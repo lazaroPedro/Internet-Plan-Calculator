@@ -5,7 +5,7 @@ import type { DispositivosType } from "../types/Dispositivos";
 type modal = {
   plano: string;
   velocidade: number;
-  preco: number;
+
 
   gamer: boolean;
   onClick: () => void;
@@ -13,7 +13,6 @@ type modal = {
 } & DispositivosType
 
 export default function PlanoModal(props: modal) {
-  let precoFormat = props.preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 })
   return (
 
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={props.onClick}>
@@ -25,7 +24,6 @@ export default function PlanoModal(props: modal) {
         <h2 className="text-6xl uppercase ">{props.plano}</h2>
 
         <h2 className="text-9xl text-nowrap">{props.velocidade}<span className="text-3xl"> Mb</span></h2>
-        <h2> {precoFormat} mensal</h2>
 
         <Link to={`/cadastro/${props.plano}/${props.qtdCellphone}/${props.qtdComputer}/${props.qtdSmarttv}/${props.qtdTvbox}/${props.qtdOther}/${props.gamer}`} className="flex text-3xl p-8 bg-white hover:bg-green-100 shadow border-green-500 border-2 text-green-500 rounded-full text-center justify-center uppercase ">Contratar</Link>
       </div>
