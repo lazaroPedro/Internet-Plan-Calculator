@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f0f2f5;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f0f2f5;">
+    <tr>
+        <td align="center">
+            <table width="600" border="0" cellspacing="0" cellpadding="20" style="background-color: #ffffff; margin: 20px 0; border: 1px solid #e1e1e1;">
+                <tr>
+                    <td align="center" style="background-color: #343a40; color: #ffffff; padding: 15px;">
+                        <h1 style="margin: 0;">Nova Venda Registrada</h1>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding: 20px;">
+                        <h2 style="color: #333;">Dados do Cliente</h2>
+                        <p style="font-size: 16px; line-height: 1.7; border-left: 3px solid #17a2b8; padding-left: 15px; margin:0;">
+                            <strong>Nome:</strong> <span th:text="${data.name}">João da Silva</span><br>
+                            <strong>E-mail:</strong> <span th:text="${data.email}">joao.silva@example.com</span><br>
+                            <strong>Telefone:</strong> <span th:text="${data.telephone}">11 98765-4321</span>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h2 style="color: #333;">Resumo do Cálculo</h2>
+                        <table width="100%" cellspacing="0" cellpadding="10" style="border-collapse: collapse; margin-top: 15px;">
+                            <tr style="background-color: #f9f9f9;">
+                                <th style="border: 1px solid #dddddd; text-align: left; color: #555;">Dispositivo</th>
+                                <th style="border: 1px solid #dddddd; text-align: center; color: #555;">Quantidade</th>
+                                <th style="border: 1px solid #dddddd; text-align: center; color: #555;">Peso Individual</th>
+                            </tr>
+                            <tr >
+                                <td style="border: 1px solid #dddddd;" >Celular</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdCellphone}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightCellphone}">0.8</td>
+                            </tr>
+                            <tr >
+                                <td style="border: 1px solid #dddddd;" >Computador</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdComputer}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightComputer}">0.8</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #dddddd;" >Smart TV</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdSmarttv}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightSmarttv}">0.8</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #dddddd;" >TV Box</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdTvbox}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightTvbox}">0.8</td>
+                            </tr>
+                            <tr >
+                                <td style="border: 1px solid #dddddd;" >Outros</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdOther}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightOther}">0.8</td>
+                            </tr>
+                            <tr th:if="${data.gamer}">
+                                <td colspan="2" style="border: 1px solid #dddddd; font-weight: bold; ">Uso para Games</td>
+                                <td style="border: 1px solid #dddddd; text-align: center; font-weight: bold;">Sim</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding-top: 15px; background-color: #e9ecef; border-radius: 4px; padding: 10px;">
+                        <p style="font-size: 16px; line-height: 1.8; margin:0;">
+                            <strong>Peso Total:</strong> <span th:text="${#numbers.formatDecimal(data.totalWeight, 1, 2)}" style="font-weight: bold;">5.0</span><br>
+                            <strong>Plano Contratado:</strong> <span th:text="${data.typePlan}" style="font-weight: bold;">Fibra Pro</span> (<span th:text="${data.velocity}">300 Mbps</span>)<br>
+                            <strong>Data da Venda:</strong> <span th:text="${data.data}">29/08/2025</span>
+                        </p>
+                    </td>
+                </tr>
+
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,12 +1,11 @@
 package com.lazaropedro.api_internet_plan.dto;
 
 import com.lazaropedro.api_internet_plan.model.PlanType;
+import jakarta.validation.constraints.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
 
@@ -18,20 +17,19 @@ public class ClientRequest {
     @Email
     private String email;
     @NotEmpty
+    @Length(min = 8, max = 20)
     private String telephone;
     @PositiveOrZero
-    private long qtdCellPhone;
+    private long qtdCellphone;
     @PositiveOrZero
     private long qtdComputer;
     @PositiveOrZero
-    private long qtdSmartTV;
+    private long qtdSmarttv;
     @PositiveOrZero
-    private long qtdTVBox;
+    private long qtdTvbox;
     @PositiveOrZero
     private long qtdOther;
     @NotNull
     private boolean gamer;
-    @NotNull
-    private PlanType planType;
 
 }

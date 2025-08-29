@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Contratação</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f7f6;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f4f7f6;">
+    <tr>
+        <td align="center">
+            <table width="600" border="0" cellspacing="0" cellpadding="20" style="background-color: #ffffff; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <tr>
+                    <td align="center" style="border-bottom: 1px solid #dddddd; padding-bottom: 20px;">
+                        <h1 style="color: #0056b3; margin: 0;">Plano Contratado com Sucesso!</h1>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding: 20px">
+                        <p style="color: #333333; font-size: 16px; line-height: 1.6;">
+                            Olá, <strong th:text="${data.name}">João da Silva</strong>!
+                        </p>
+                        <p style="color: #333333; font-size: 16px; line-height: 1.6;">
+                            Agradecemos por escolher a Micks! Estamos felizes em confirmar a contratação do seu novo plano de internet. Abaixo estão os detalhes da venda:
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h2 style="color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px;"></h2>
+                        <table width="100%" cellspacing="0" cellpadding="10" style="border-collapse: collapse; margin-top: 15px;">
+                            <tr style="background-color: #f9f9f9;">
+                                <th style="border: 1px solid #dddddd; text-align: left; color: #555;">Dispositivo</th>
+                                <th style="border: 1px solid #dddddd; text-align: center; color: #555;">Quantidade</th>
+                                <th style="border: 1px solid #dddddd; text-align: center; color: #555;">Peso Individual</th>
+                            </tr>
+                            <tr >
+                                <td style="border: 1px solid #dddddd;" >Celular</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdCellphone}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightCellphone}">0.8</td>
+                            </tr>
+                            <tr >
+                                <td style="border: 1px solid #dddddd;" >Computador</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdComputer}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightComputer}">0.8</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #dddddd;" >Smart TV</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdSmarttv}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightSmarttv}">0.8</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #dddddd;" >TV Box</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdTvbox}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightTvbox}">0.8</td>
+                            </tr>
+                            <tr >
+                                <td style="border: 1px solid #dddddd;" >Outros</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.qtdOther}">2</td>
+                                <td style="border: 1px solid #dddddd; text-align: center;" th:text="${data.weightOther}">0.8</td>
+                            </tr>
+                            <tr th:if="${data.gamer}">
+                                <td colspan="2" style="border: 1px solid #dddddd; font-weight: bold; ">Uso para Games</td>
+                                <td style="border: 1px solid #dddddd; text-align: center; font-weight: bold;">Sim</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding-top: 20px;">
+                        <p style="font-size: 16px; line-height: 1.8;">
+                            <strong>Peso Total Calculado:</strong> <span th:text="${#numbers.formatDecimal(data.totalWeight, 1, 2)}" style="font-weight: bold; color: #333;">5.0</span><br>
+                            <strong>Plano Recomendado:</strong> <span th:text="${data.typePlan}" style="font-weight: bold; color: #28a745;">Prata</span><br>
+                            <strong>Velocidade:</strong> <span th:text="${data.velocity}" style="font-weight: bold; color: #333;">300 Mbps</span>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" style="border-top: 1px solid #dddddd; padding-top: 20px; font-size: 12px; color: #777777;">
+                        <p>Em caso de dúvidas, entre em contato com nosso suporte.</p>
+                        <p>&copy; 2025 Micks Telecomunicações. Todos os direitos reservados.</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

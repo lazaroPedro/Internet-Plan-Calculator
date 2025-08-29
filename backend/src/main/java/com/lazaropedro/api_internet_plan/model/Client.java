@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 
 import java.time.LocalDateTime;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 @Table(name="clients")
 @Entity
 @Data
+
 public class Client {
 
     @Id
@@ -19,17 +21,24 @@ public class Client {
     private String name;
     private String email;
     private String telephone;
-
-    private long qtdCellPhone;
+    @Column(name = "qtd_cellphone")
+    private long qtdCellphone;
+    @Column(name = "qtd_computer")
     private long qtdComputer;
-    private long qtdSmartTV;
-    private long qtdTVBox;
+    @Column(name = "qtd_smarttv")
+    private long qtdSmarttv;
+    @Column(name = "qtd_tvbox")
+    private long qtdTvbox;
+    @Column(name = "qtd_other")
     private long qtdOther;
     private boolean gamer;
-
+    @Column(name = "total_weight")
     private float totalWeight;
     @CreationTimestamp
     private LocalDateTime created;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "plan_type")
     private PlanType planType;
 
 

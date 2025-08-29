@@ -11,13 +11,13 @@ public class PlanRequest {
 
     @PositiveOrZero
 
-    private long qtdCellPhone;
+    private long qtdCellphone;
     @PositiveOrZero
     private long qtdComputer;
     @PositiveOrZero
-    private long qtdSmartTV;
+    private long qtdSmarttv;
     @PositiveOrZero
-    private long qtdTVBox;
+    private long qtdTvbox;
     @PositiveOrZero
     private long qtdOther;
     @NotNull

@@ -22,10 +22,10 @@ public class PlanService {
             );
     public PlanResponse calcPlan(PlanRequest planRequest) {
         PlanResponse returnPlan = new PlanResponse();
-        returnPlan.setWeightCellPhone(planRequest.getQtdCellPhone() * 0.8f);
+        returnPlan.setWeightCellPhone(planRequest.getQtdCellphone() * 0.8f);
         returnPlan.setWeightComputer(planRequest.getQtdComputer() * 0.5f);
-        returnPlan.setWeightSmartTV(planRequest.getQtdSmartTV() * 0.4f);
-        returnPlan.setWeightTVBox(planRequest.getQtdTVBox() * 0.6f);
+        returnPlan.setWeightSmartTV(planRequest.getQtdSmarttv() * 0.4f);
+        returnPlan.setWeightTVBox(planRequest.getQtdTvbox() * 0.6f);
         returnPlan.setWeightOther(planRequest.getQtdOther() * 0.1f);
 
         float valor = returnPlan.getWeightCellPhone()
