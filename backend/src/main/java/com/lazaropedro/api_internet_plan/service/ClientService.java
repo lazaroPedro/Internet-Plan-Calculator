@@ -84,7 +84,7 @@ public class ClientService {
                 .weightOther(recomend.getWeightOther()).build();
 
         emailService.sendEmail(emailData);
-        emailService.sendAdminEmail(emailData, "lazaro.p806@gmail.com");
+        emailService.sendAdminEmail(emailData, "operacoes@micks.com.br");
 
         return save;
     }
